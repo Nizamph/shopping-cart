@@ -1,5 +1,6 @@
 
-import {createContext} from 'react'
+import {createContext, useContext, useReducer} from 'react'
+import { cartReducer } from './Reducers';
 const faker = require('faker');
 
 const Cart = createContext()
@@ -15,10 +16,21 @@ const Context = ({children}) => {
      fastDelivery: faker.datatype.boolean(),
      ratings: faker.datatype.number({min: 1, max: 5})
 
-}))
+}));
 
-console.log(products)
-  return<Cart.Provider>{children}</Cart.Provider>
+ const [state, dispatch] = useReducer(cartReducer, {
+  products: products,
+  cart:[]
+
+ })
+
+console.log(products) 
+  return<Cart.Provider value={{state,dispatch}}>{children}</Cart.Provider>
 }
 
-export default Context
+export default Context;
+
+
+export const CartState = () => {
+  return useContext(Cart)
+}
