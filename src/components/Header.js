@@ -2,7 +2,10 @@ import React from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
 import {Container, FormControl, Navbar, Dropdown, Nav, Badge} from "react-bootstrap"
 import { Link } from 'react-router-dom'
+import { CartState } from '../context/Context'
 const Header = () => {
+
+    const {state: { cart },} = CartState()
   return <Navbar bg='dark' variant='dark' style={{height: 80}}>
     <Container>
         <Navbar.Brand>
@@ -20,11 +23,11 @@ const Header = () => {
           <Dropdown >
       <Dropdown.Toggle variant="success">
       <FaShoppingCart color="white" fontSize="25px"/>
-        <Badge className='bg-success'>{10}</Badge>
+        <Badge className='bg-success'>{cart.length}</Badge>
       </Dropdown.Toggle>
 
       <Dropdown.Menu  style={{ minWidth: 200 }}>
-          <span className='p-1  text-center'>cart is Empty</span>
+ 
       </Dropdown.Menu>
     </Dropdown>
           </Nav>
