@@ -7,7 +7,7 @@ import Filters from './Filters'
 const Home = () => {
 
   const { state: {products}} = CartState()
-  console.log(products)
+  console.log('from home',products)
   return<div className='home'>
     <Filters/>
     <div className='productContainer'>

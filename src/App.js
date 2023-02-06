@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import './App.css';
 import {Routes,
-  Route,BrowserRouter
+  Route
 } from 'react-router-dom';
 import Home from './components/Home';
 import Contact from './components/Contact';
