@@ -66,7 +66,7 @@ const Header = () => {
           }
           </>
         ):(
-          <span></span>
+          <span style={{textAlign:"center"}}>Cart is Empty</span>
         ) }
  
       </Dropdown.Menu>

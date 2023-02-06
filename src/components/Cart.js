@@ -27,14 +27,20 @@ const Cart = () => {
                 <Col md={2}>
                   <span><i className="fa fa-inr" aria-hidden="true"></i>{prod.price}</span>
                 </Col>
-                <Col md={2}>
-                  <span>{prod.price}</span>
-                </Col >
+
                 <Col md={2}>
                   <Rating rating={prod.ratings}/>
                 </Col>
                 <Col>
-                <Form.Control as="select"  value={prod.qty} className="custom-select">
+                <Form.Control as="select"  value={prod.qty} 
+                 onChange={(e) => 
+                 dispatch({
+                  type: "CHANGE_CART_QTY",
+                  payload: {
+                    id: prod.id,
+                    qty: e.target.value,
+                  }
+                 })}>
                   {[...Array(prod.inStock).keys()].map((x) => (
                     <option key={x + 1}>{x + 1}</option>
                   ))}
