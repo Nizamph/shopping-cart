@@ -33,3 +33,27 @@
   width: 30%;
   margin: 10px;
 }
+
+.cartitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+}
+
+.cartItemImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 90px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.cartItemDetail {
+  font-size: large;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+
+
