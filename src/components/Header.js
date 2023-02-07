@@ -7,7 +7,10 @@ import { AiFillDelete } from 'react-icons/ai'
 import { Button } from 'react-bootstrap'
 const Header = () => {
 
-    const {state: { cart }, dispatch} = CartState()
+    const {state: { cart },
+     dispatch,
+     productDispatch
+    } = CartState()
   return <Navbar bg='dark' variant='dark' style={{height: 80}}>
     <Container>
         <Navbar.Brand>
@@ -16,8 +19,15 @@ const Header = () => {
         <Link to='/' className='text-white'>Home</Link>
         <Link to="/contact" className='text-white'>Contact</Link>
         <Navbar.Text className='search'>
-          <FormControl style={{ width : 500 }} placeholder="search a product"
+          <FormControl style={{ width : 500 }}
+           placeholder="search a product"
            className='m-auto'
+           onChange={(e) => {
+            productDispatch({
+              type: "FILTER_BY_SEARCH",
+              payload: e.target.value,
+            })
+           }}
            />
           </Navbar.Text> 
           <Nav>
