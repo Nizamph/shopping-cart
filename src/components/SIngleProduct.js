@@ -3,7 +3,7 @@ import React from 'react'
 import { Card,Button } from 'react-bootstrap'
 import { CartState } from '../context/Context'
 import Rating from './Rating'
-const SIngleProduct = ({prod}) => {
+const SingleProduct = ({prod}) => {
   const { state: {cart},
 dispatch, } = CartState()
    console.log(cart)
@@ -22,7 +22,7 @@ dispatch, } = CartState()
                   <div>4 days Delivery</div>
                 )
               }
-              <Rating  rating={prod.rating}/>
+              <Rating  rating={prod.ratings}/>
             </Card.Subtitle>
             {
               cart.some(p=>p.id===prod.id)?(
@@ -52,4 +52,4 @@ dispatch, } = CartState()
   )
 }
 
-export default SIngleProduct
+export default SingleProduct

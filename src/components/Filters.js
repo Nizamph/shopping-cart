@@ -19,7 +19,7 @@ const Filters = () => {
         label="Ascending"
         name='group1'
         type='radio'
-        id={'inline-1'}
+        id={`inline-1`}
         onChange={() => 
         productDispatch({
           type: "SORT_BY_PRICE",
@@ -35,7 +35,7 @@ const Filters = () => {
         label="Descending"
         name="group1"
         type='radio'
-        id={'inline-2'}
+        id={`inline-2`}
         onChange={() => 
           productDispatch({
             type: "SORT_BY_PRICE",
@@ -51,11 +51,10 @@ const Filters = () => {
         label="include Out of Stock"
         name="group1"
         type="checkbox"
-        id={'inline-3'}
+        id={`inline-3`}
         onChange={() => 
           productDispatch({
             type: "FILTER_BY_STOCK",
-            payload: "highToLow"
           })
           }
           checked={byStock}
@@ -67,7 +66,7 @@ const Filters = () => {
         label="Fast Delivery only"
         name="group1"
         type="checkbox"
-        id={'inline-4'}
+        id={`inline-4`}
         onChange={() => 
           productDispatch({
             type: "FILTER_BY_DELIVERY",
@@ -78,16 +77,20 @@ const Filters = () => {
       </span>
       <span>
         <label style={{ paddingRight: 10 }}>Rating:</label>
-        <Rating rating={byRating }
-         onClick={(i) => productDispatch({
+        <Rating 
+        rating={byRating}
+         onClick={(i) => 
+          productDispatch({
           type: "FILTER_BY_RATING",
           payload: i + 1
-        })} style={{ cursor:"pointer" }}/>
+        })
+        } 
+        style={{ cursor:"pointer" }}/>
       </span>
       <Button variant="light" 
-              onChange={() => 
+              onClick={() => 
                 productDispatch({
-                  type: "CLEAR_FILTERS",
+                  type: "CLEAR_FILTERS"
                 })
                 }
       >Clear Filters</Button>

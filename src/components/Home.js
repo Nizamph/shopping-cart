@@ -1,6 +1,6 @@
 import React from 'react'
 import { CartState } from '../context/Context'
-import SIngleProduct from './SIngleProduct'
+import SingleProduct from './SingleProduct'
 import "./styles.css"
 import Filters from './Filters'
 
@@ -29,7 +29,7 @@ const Home = () => {
 
     if(byRating) {
       sortedProducts = sortedProducts.filter(
-        (prod) => prod.rating >= byRating
+        (prod) => prod.ratings >= byRating
         );
     }
 
@@ -42,13 +42,12 @@ const Home = () => {
   }
 
 
-  console.log('taransformed products', transformProducts())
-  console.log('from home',products)
+
   return<div className='home'>
     <Filters/>
     <div className='productContainer'>
       {transformProducts().map((prod) => {
-       return <SIngleProduct prod={prod} key={prod.id}/>
+       return <SingleProduct prod={prod} key={prod.id}/>
       })}
     </div>
   </div>

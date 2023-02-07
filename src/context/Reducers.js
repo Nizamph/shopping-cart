@@ -18,7 +18,7 @@ export const productReducer = (state,action) => {
     case 'FILTER_BY_STOCK':
         return {...state, byStock: !state.byStock }  
     case 'FILTER_BY_DELIVERY':
-        return {...state, byFastDelivery: !state.byStock }  
+        return {...state, byFastDelivery: !state.byFastDelivery }  
     case 'FILTER_BY_RATING':
         return {...state, byRating: action.payload }  
     case 'FILTER_BY_SEARCH':
@@ -30,7 +30,8 @@ export const productReducer = (state,action) => {
           byRating:0,
           searchQuery:"",
         }    
-        default:
+    default:
+          return state;
    }
 }
 
