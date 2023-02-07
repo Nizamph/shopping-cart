@@ -66,7 +66,7 @@ const Cart = () => {
           }
         </ListGroup>
       </div>
-      <div className='filters  ' style={{width:"22%"}}>
+      <div className='filters' style={{width:"22%"}}>
           <span className='title'>
           Subtotal ({cart.length}) items
           </span>

@@ -10,6 +10,7 @@
   justify-content: space-around;
 }
 
+
 .filters {
   background-color: rgba(23, 23, 23, 0.926);
   color: white;
@@ -18,7 +19,6 @@
   flex-direction: column;
   width: 20%;
   height: 87vh;
-
 }
 
 .filters > span {
@@ -56,3 +56,29 @@
   flex-direction: column;
 }
 
+
+@media (max-width: 771px) {
+  .filters {
+   width: 40%;
+   padding: 10px;
+   margin: 5px;
+  } 
+  .filters > span {
+    padding-bottom:  10px;
+  }
+
+  .productContainer {
+    width: 58%;
+  }
+
+  .search {
+    display: none !important;
+  }
+ 
+  
+  .products {
+    width: 100%;
+  }
+
+  
+ }
